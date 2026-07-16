@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@finalproject.com",
+      "password": "AdminPassword123!",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "email": "hoang.nam@finalproject.com",
+      "password": "EmployeePassword123!",
+      "role": "USER"
+    }
+  ],
+  "employees": [
+    {
+      "id": "1",
+      "fullName": "Nguyễn Minh Khang",
+      "email": "admin@finalproject.com",
+      "role": "ADMIN",
+      "gender": "MALE",
+      "dob": "1990-05-12",
+      "address": "Số 12, Ngõ 45, Đường Láng, Quận Đống Đa, Hà Nội"
+    },
+    {
+      "id": "2",
+      "fullName": "Lê Hoàng Nam",
+      "email": "hoang.nam@finalproject.com",
+      "role": "USER",
+      "gender": "MALE",
+      "dob": "1994-08-20",
+      "address": "Chung cư Sunrise City, Nguyễn Hữu Thọ, Quận 7, TP. Hồ Chí Minh"
+    },
+    {
+      "id": "3",
+      "fullName": "Phạm Thị Mai",
+      "email": "thi.mai@finalproject.com",
+      "role": "USER",
+      "gender": "FEMALE",
+      "dob": "1996-11-03",
+      "address": "Khu đô thị Hòa Xuân, Quận Cẩm Lệ, Đà Nẵng"
+    },
+    {
+      "id": "4",
+      "fullName": "Trần Quốc Bảo",
+      "email": "quoc.bao@finalproject.com",
+      "role": "USER",
+      "gender": "MALE",
+      "dob": "1992-04-15",
+      "address": "Số 78, Đường Ba Tháng Hai, Quận 10, TP. Hồ Chí Minh"
+    },
+    {
+      "id": "5",
+      "fullName": "Nguyễn Thu Thảo",
+      "email": "thu.thao@finalproject.com",
+      "role": "USER",
+      "gender": "FEMALE",
+      "dob": "1998-09-30",
+      "address": "Biệt thự liền kề Vinhomes Ocean Park, Gia Lâm, Hà Nội"
+    },
+    {
+      "id": "6",
+      "fullName": "Phan Minh Tuấn",
+      "email": "minh.tuan@finalproject.com",
+      "role": "USER",
+      "gender": "MALE",
+      "dob": "1995-01-25",
+      "address": "Số 102, Đường Lê Lợi, TP. Vinh, Nghệ An"
+    },
+    {
+      "id": "7",
+      "fullName": "Vũ Lan Anh",
+      "email": "lan.anh@finalproject.com",
+      "role": "USER",
+      "gender": "FEMALE",
+      "dob": "1997-07-14",
+      "address": "Số 56, Đường Trần Hưng Đạo, Quận Hồng Bàng, Hải Phòng"
+    },
+    {
+      "id": "8",
+      "fullName": "Đỗ Duy Anh",
+      "email": "duy.anh@finalproject.com",
+      "role": "USER",
+      "gender": "MALE",
+      "dob": "1993-03-22",
+      "address": "Số 14/8, Đường Mậu Thân, Quận Ninh Kiều, Cần Thơ"
+    },
+    {
+      "id": "9",
+      "fullName": "Bùi Thanh Trúc",
+      "email": "thanh.truc@finalproject.com",
+      "role": "USER",
+      "gender": "FEMALE",
+      "dob": "1999-12-05",
+      "address": "Số 234, Đường Hùng Vương, TP. Nha Trang, Khánh Hòa"
+    },
+    {
+      "id": "10",
+      "fullName": "Trương Tấn Đạt",
+      "email": "tan.dat@finalproject.com",
+      "role": "USER",
+      "gender": "MALE",
+      "dob": "1991-06-18",
+      "address": "Khu dân cư Chánh Nghĩa, TP. Thủ Dầu Một, Bình Dương"
+    }
+  ]
+}
