@@ -1,5 +1,6 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
 export default function RouteConfig() {
-  return <div>RouteConfig</div>;
+  return <BrowserRouter></BrowserRouter>;
 }
