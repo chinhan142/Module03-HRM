@@ -13,7 +13,7 @@ interface AuthState {
 }
 
 // 2. Intitial state of those state
-const initialAuthState: AuthState = {
+const initialState: AuthState = {
   user: null,
   isAuthenticated: false,
   loading: false,
@@ -24,7 +24,7 @@ const initialAuthState: AuthState = {
 // Note that if some actions need performing API call -> use createAsyncThunk
 
 export const loginThunk = createAsyncThunk(
-  // thunk name 
+  // thunk name
   "auth/login",
   async (
     // Value of payload
@@ -54,7 +54,7 @@ export const getUserProfileThunk = createAsyncThunk(
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: initialAuthState,
+  initialState,
   reducers: {
     logoutAction: (state) => {
       AuthService.logout();
