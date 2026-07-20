@@ -62,6 +62,9 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.error = null;
     },
+    clearAuthError: (state) => {
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     // LoginThunk processing
@@ -74,6 +77,7 @@ const authSlice = createSlice({
       state.loading = false;
       // action.payload is the data returned from the thunk
       state.user = action.payload;
+      state.isAuthenticated = true;
     });
 
     builder.addCase(loginThunk.rejected, (state, action) => {
@@ -106,5 +110,5 @@ const authSlice = createSlice({
 });
 
 // 4. Export
-export const { logoutAction } = authSlice.actions;
+export const { logoutAction, clearAuthError } = authSlice.actions;
 export default authSlice.reducer;

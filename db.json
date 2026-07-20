@@ -2,8 +2,8 @@
   "users": [
     {
       "id": "1",
-      "email": "admin@finalproject.com",
-      "password": "AdminPassword123!",
+      "email": "admin@gmail.com",
+      "password": "123",
       "role": "ADMIN"
     },
     {
@@ -17,7 +17,7 @@
     {
       "id": "1",
       "fullName": "Nguyễn Minh Khang",
-      "email": "admin@finalproject.com",
+      "email": "admin@gmail.com",
       "role": "ADMIN",
       "gender": "MALE",
       "dob": "1990-05-12",
@@ -103,6 +103,15 @@
       "gender": "MALE",
       "dob": "1991-06-18",
       "address": "Khu dân cư Chánh Nghĩa, TP. Thủ Dầu Một, Bình Dương"
+    },
+    {
+      "fullName": "Toàn",
+      "email": "toan@gmail.com",
+      "role": "USER",
+      "gender": "MALE",
+      "dob": "2026-07-07",
+      "address": "TPHCM",
+      "id": "O24PFbi"
     }
   ]
 }
