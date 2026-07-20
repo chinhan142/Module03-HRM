@@ -10,6 +10,7 @@ import { useFormik } from "formik";
 
 const { Title, Text } = Typography;
 
+// Setting validation schema by using Yup
 const loginSchema = Yup.object({
   email: Yup.string()
     .email("Email không hợp lệ")
@@ -40,13 +41,16 @@ export default function LoginPage() {
 
   // Using formik and yup for form filling and handle input validation
   const formik = useFormik({
+    // 1. Initial values of input field
     initialValues: {
       email: "",
       password: "",
     },
+    // 2. Applied yup validation schema
     validationSchema: loginSchema,
+    // 3. On submit function
     onSubmit: async (values) => {
-      // Dispatch thunk đăng nhập
+      // Dispatch login thunk
       const result = await dispatch(loginThunk(values));
       if (loginThunk.fulfilled.match(result)) {
         message.success("Đăng nhập thành công!");

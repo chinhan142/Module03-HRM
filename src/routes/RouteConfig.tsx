@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import Dashboard from "../components/Dashboard";
 import LoginPage from "../components/LoginPage";
+import ProfilePage from "../components/ProfilePage";
 
 export default function RouteConfig() {
   // Using Route to routing those url
@@ -15,6 +16,7 @@ export default function RouteConfig() {
       {/* Private route */}
       <Route element={<ProtectedRoute />}>
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Route>
 
       {/* Wrong url or homepage -> leading back to dashboard */}

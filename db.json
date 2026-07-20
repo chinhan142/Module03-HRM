@@ -8,8 +8,14 @@
     },
     {
       "id": "2",
-      "email": "hoang.nam@finalproject.com",
-      "password": "EmployeePassword123!",
+      "email": "nam@gmail.com",
+      "password": "123",
+      "role": "USER"
+    },
+    {
+      "id": "3",
+      "email": "mai@gmail.com",
+      "password": "123",
       "role": "USER"
     }
   ],
@@ -26,7 +32,7 @@
     {
       "id": "2",
       "fullName": "Lê Hoàng Nam",
-      "email": "hoang.nam@finalproject.com",
+      "email": "nam@gmail.com",
       "role": "USER",
       "gender": "MALE",
       "dob": "1994-08-20",
@@ -35,7 +41,7 @@
     {
       "id": "3",
       "fullName": "Phạm Thị Mai",
-      "email": "thi.mai@finalproject.com",
+      "email": "mai@gmail.com",
       "role": "USER",
       "gender": "FEMALE",
       "dob": "1996-11-03",
@@ -44,7 +50,7 @@
     {
       "id": "4",
       "fullName": "Trần Quốc Bảo",
-      "email": "quoc.bao@finalproject.com",
+      "email": "bao@gmail.com",
       "role": "USER",
       "gender": "MALE",
       "dob": "1992-04-15",
@@ -53,7 +59,7 @@
     {
       "id": "5",
       "fullName": "Nguyễn Thu Thảo",
-      "email": "thu.thao@finalproject.com",
+      "email": "thao@gmail.com",
       "role": "USER",
       "gender": "FEMALE",
       "dob": "1998-09-30",
@@ -62,7 +68,7 @@
     {
       "id": "6",
       "fullName": "Phan Minh Tuấn",
-      "email": "minh.tuan@finalproject.com",
+      "email": "tuan@gmail.com",
       "role": "USER",
       "gender": "MALE",
       "dob": "1995-01-25",
@@ -71,7 +77,7 @@
     {
       "id": "7",
       "fullName": "Vũ Lan Anh",
-      "email": "lan.anh@finalproject.com",
+      "email": "lananh@gmail.com",
       "role": "USER",
       "gender": "FEMALE",
       "dob": "1997-07-14",
@@ -80,7 +86,7 @@
     {
       "id": "8",
       "fullName": "Đỗ Duy Anh",
-      "email": "duy.anh@finalproject.com",
+      "email": "duyanh@gmail.com",
       "role": "USER",
       "gender": "MALE",
       "dob": "1993-03-22",
@@ -89,7 +95,7 @@
     {
       "id": "9",
       "fullName": "Bùi Thanh Trúc",
-      "email": "thanh.truc@finalproject.com",
+      "email": "truc@gmail.com",
       "role": "USER",
       "gender": "FEMALE",
       "dob": "1999-12-05",
@@ -98,20 +104,11 @@
     {
       "id": "10",
       "fullName": "Trương Tấn Đạt",
-      "email": "tan.dat@finalproject.com",
+      "email": "dat@gmail.com",
       "role": "USER",
       "gender": "MALE",
       "dob": "1991-06-18",
       "address": "Khu dân cư Chánh Nghĩa, TP. Thủ Dầu Một, Bình Dương"
-    },
-    {
-      "fullName": "Toàn",
-      "email": "toan@gmail.com",
-      "role": "USER",
-      "gender": "MALE",
-      "dob": "2026-07-07",
-      "address": "TPHCM",
-      "id": "O24PFbi"
     }
   ]
 }

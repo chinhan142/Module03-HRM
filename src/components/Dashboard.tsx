@@ -1,7 +1,24 @@
 // src/components/Dashboard.tsx
 import React, { useEffect, useState, useMemo } from "react";
-import { Layout, Table, Button, Input, Select, Space, Tag, Popconfirm, message, Card, Typography } from "antd";
-import { PlusOutlined, EditOutlined, DeleteOutlined, SearchOutlined } from "@ant-design/icons";
+import {
+  Layout,
+  Table,
+  Button,
+  Input,
+  Select,
+  Space,
+  Tag,
+  Popconfirm,
+  message,
+  Card,
+  Typography,
+} from "antd";
+import {
+  PlusOutlined,
+  EditOutlined,
+  DeleteOutlined,
+  SearchOutlined,
+} from "@ant-design/icons";
 import HeaderNavbar from "./HeaderNavbar";
 import EmployeeModal from "./EmployeeModal";
 import { useAppDispatch, useAppSelector } from "../store";
@@ -13,17 +30,27 @@ import {
   setFilterRole,
 } from "../store/slices/employee.slice";
 import type { Employee } from "../types/user.interface";
+import { useNavigate } from "react-router-dom";
 
 const { Content } = Layout;
 const { Title } = Typography;
 
 export default function Dashboard() {
   const dispatch = useAppDispatch();
-  const { employees, loading, searchKeyword, filterGender, filterRole } = useAppSelector((state) => state.employee);
+  const navigate = useNavigate();
+  const { employees, loading, searchKeyword, filterGender, filterRole } =
+    useAppSelector((state) => state.employee);
   const { user } = useAppSelector((state) => state.auth);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [editingEmployee, setEditingEmployee] = useState<Employee | null>(null);
+
+  // Nếu nhân viên có role là user thì điều hướng sang trang profile
+  useEffect(() => {
+    if (user?.role === "USER") {
+      navigate("/profile");
+    }
+  }, [user, navigate]);
 
   // Vừa vào trang -> Tự động dispatch lấy danh sách nhân viên
   useEffect(() => {
@@ -78,7 +105,8 @@ export default function Dashboard() {
       title: "Họ và tên",
       dataIndex: "fullName",
       key: "fullName",
-      sorter: (a: Employee, b: Employee) => a.fullName.localeCompare(b.fullName),
+      sorter: (a: Employee, b: Employee) =>
+        a.fullName.localeCompare(b.fullName),
     },
     {
       title: "Email",
@@ -138,7 +166,12 @@ export default function Dashboard() {
               cancelText="Hủy"
               okButtonProps={{ danger: true }}
             >
-              <Button type="primary" danger icon={<DeleteOutlined />} size="small">
+              <Button
+                type="primary"
+                danger
+                icon={<DeleteOutlined />}
+                size="small"
+              >
                 Xóa
               </Button>
             </Popconfirm>
@@ -153,10 +186,22 @@ export default function Dashboard() {
       <HeaderNavbar />
 
       <Content style={{ padding: "24px 48px", background: "#f5f5f5" }}>
-        <Card style={{ borderRadius: 8, boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}>
+        <Card
+          style={{ borderRadius: 8, boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}
+        >
           {/* Thanh Công Cụ: Tìm kiếm, Bộ lọc & Nút Thêm */}
-          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 20, flexWrap: "wrap", gap: 12 }}>
-            <Title level={4} style={{ margin: 0 }}>Danh Sách Nhân Viên</Title>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginBottom: 20,
+              flexWrap: "wrap",
+              gap: 12,
+            }}
+          >
+            <Title level={4} style={{ margin: 0 }}>
+              Danh Sách Nhân Viên
+            </Title>
 
             <Space wrap size="middle">
               {/* Ô tìm kiếm */}
@@ -193,7 +238,11 @@ export default function Dashboard() {
               </Select>
 
               {/* Nút Thêm */}
-              <Button type="primary" icon={<PlusOutlined />} onClick={handleOpenAddModal}>
+              <Button
+                type="primary"
+                icon={<PlusOutlined />}
+                onClick={handleOpenAddModal}
+              >
                 Thêm Nhân Viên
               </Button>
             </Space>
@@ -205,7 +254,11 @@ export default function Dashboard() {
             columns={columns}
             rowKey="id"
             loading={loading}
-            pagination={{ pageSize: 5, showSizeChanger: true, pageSizeOptions: ["5", "10", "20"] }}
+            pagination={{
+              pageSize: 5,
+              showSizeChanger: true,
+              pageSizeOptions: ["5", "10", "20"],
+            }}
             scroll={{ x: "max-content" }}
           />
         </Card>
