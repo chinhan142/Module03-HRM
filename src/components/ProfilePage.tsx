@@ -23,12 +23,12 @@ export default function ProfilePage() {
   const { user } = useAppSelector((state) => state.auth);
   const { employees } = useAppSelector((state) => state.employee);
 
-  // Tự động lấy danh sách nhân viên để khớp thông tin chi tiết của user đang đăng nhập
+  // Automatically fetch employee list to match current logged-in user profile details
   useEffect(() => {
     dispatch(getAllEmployeeThunk());
   }, [dispatch]);
 
-  // Tìm thông tin chi tiết nhân viên có email trùng với user đăng nhập
+  // Find employee details matching the logged-in user email
   const currentEmployee = useMemo(() => {
     if (!user) return null;
     return employees.find((emp) => emp.email === user.email);
@@ -55,7 +55,7 @@ export default function ProfilePage() {
             <Text type="secondary">Thông tin nhân viên hệ thống HRM</Text>
           </div>
 
-          {/* Thông báo phân quyền */}
+          {/* Role Permission Notice */}
           <Alert
             message="Thông báo phân quyền (View-Only)"
             description="Tài khoản Nhân viên chỉ có quyền xem thông tin cá nhân. Mọi thao tác cập nhật hoặc chỉnh sửa phải được thực hiện bởi Quản trị viên (Admin / HR)."
@@ -64,7 +64,7 @@ export default function ProfilePage() {
             style={{ marginBottom: 24, borderRadius: 6 }}
           />
 
-          {/* Chi tiết thông tin cá nhân đầy đủ */}
+          {/* Full Personal Details */}
           <Descriptions
             bordered
             column={1}

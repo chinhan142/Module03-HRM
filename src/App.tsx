@@ -7,7 +7,7 @@ import { getUserProfileThunk } from "./store/slices/auth.slice";
 export default function App() {
   const dispatch = useAppDispatch();
 
-  // Khôi phục phiên làm việc từ LocalStorage Token khi nạp App
+  // Restore user session from LocalStorage Token on App mount
   useEffect(() => {
     dispatch(getUserProfileThunk());
   }, [dispatch]);

@@ -45,19 +45,19 @@ export default function Dashboard() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editingEmployee, setEditingEmployee] = useState<Employee | null>(null);
 
-  // Nếu nhân viên có role là user thì điều hướng sang trang profile
+  // If employee role is USER, redirect to profile page
   useEffect(() => {
     if (user?.role === "USER") {
       navigate("/profile");
     }
   }, [user, navigate]);
 
-  // Vừa vào trang -> Tự động dispatch lấy danh sách nhân viên
+  // Automatically dispatch to fetch employee list on mount
   useEffect(() => {
     dispatch(getAllEmployeeThunk());
   }, [dispatch]);
 
-  // Lọc danh sách nhân viên theo từ khóa tìm kiếm & bộ lọc
+  // Filter employee list by search keyword & filters
   const filteredEmployees = useMemo(() => {
     return (employees || []).filter((emp) => {
       const matchSearch =
@@ -71,29 +71,29 @@ export default function Dashboard() {
     });
   }, [employees, searchKeyword, filterGender, filterRole]);
 
-  // Xóa nhân viên
+  // Delete employee
   const handleDelete = async (id: string) => {
     try {
       await dispatch(deleteEmployeeThunk(id)).unwrap();
-      message.success("Xóa nhân viên thành công!");
+      message.success("Employee deleted successfully!");
     } catch (err: any) {
-      message.error(err || "Xóa nhân viên thất bại!");
+      message.error(err || "Failed to delete employee!");
     }
   };
 
-  // Mở modal thêm mới
+  // Open add modal
   const handleOpenAddModal = () => {
     setEditingEmployee(null);
     setModalOpen(true);
   };
 
-  // Mở modal chỉnh sửa
+  // Open edit modal
   const handleOpenEditModal = (record: Employee) => {
     setEditingEmployee(record);
     setModalOpen(true);
   };
 
-  // Định nghĩa các cột cho bảng Antd Table
+  // Column definitions for Antd Table
   const columns = [
     {
       title: "STT",
@@ -189,7 +189,7 @@ export default function Dashboard() {
         <Card
           style={{ borderRadius: 8, boxShadow: "0 2px 8px rgba(0,0,0,0.06)" }}
         >
-          {/* Thanh Công Cụ: Tìm kiếm, Bộ lọc & Nút Thêm */}
+          {/* Toolbar: Search, Filters & Add Button */}
           <div
             style={{
               display: "flex",
@@ -204,7 +204,7 @@ export default function Dashboard() {
             </Title>
 
             <Space wrap size="middle">
-              {/* Ô tìm kiếm */}
+              {/* Search input */}
               <Input
                 placeholder="Tìm theo tên hoặc email..."
                 prefix={<SearchOutlined />}
@@ -214,7 +214,7 @@ export default function Dashboard() {
                 allowClear
               />
 
-              {/* Lọc Giới tính */}
+              {/* Gender Filter */}
               <Select
                 value={filterGender}
                 onChange={(val) => dispatch(setFilterGender(val))}
@@ -226,7 +226,7 @@ export default function Dashboard() {
                 <Select.Option value="OTHER">Khác</Select.Option>
               </Select>
 
-              {/* Lọc Vai trò */}
+              {/* Role Filter */}
               <Select
                 value={filterRole}
                 onChange={(val) => dispatch(setFilterRole(val))}
@@ -237,7 +237,7 @@ export default function Dashboard() {
                 <Select.Option value="USER">USER</Select.Option>
               </Select>
 
-              {/* Nút Thêm */}
+              {/* Add Button */}
               <Button
                 type="primary"
                 icon={<PlusOutlined />}
@@ -248,7 +248,7 @@ export default function Dashboard() {
             </Space>
           </div>
 
-          {/* Bảng Dữ Liệu Nhân Viên */}
+          {/* Employee Data Table */}
           <Table
             dataSource={filteredEmployees}
             columns={columns}
@@ -264,7 +264,7 @@ export default function Dashboard() {
         </Card>
       </Content>
 
-      {/* Modal Form Thêm / Sửa Nhân Viên */}
+      {/* Add / Edit Employee Form Modal */}
       <EmployeeModal
         open={modalOpen}
         editingEmployee={editingEmployee}

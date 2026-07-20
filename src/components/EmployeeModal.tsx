@@ -14,7 +14,7 @@ interface EmployeeModalProps {
   onClose: () => void;
 }
 
-// Validate Formik + Yup nghiêm ngặt
+// Strict Formik + Yup Validation Schema
 const validationSchema = Yup.object({
   fullName: Yup.string().min(2, "Họ tên phải từ 2 ký tự").required("Vui lòng nhập họ tên"),
   email: Yup.string().email("Email không đúng định dạng").required("Vui lòng nhập email"),
